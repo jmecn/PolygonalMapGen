@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class TestDriver {
 
     /** Do you really need to save image? */
-    private static final boolean SAVE_FILE = false;
+    private static final boolean SAVE_FILE = true;
 
     /** The side of the square in which the graph will be fitted. */
     private static final int GRAPH_BOUNDS = 2048;
@@ -121,7 +121,7 @@ public class TestDriver {
 
     private static void saveFile(BufferedImage img) throws IOException {
         if (SAVE_FILE) {
-            File file = new File("output/");
+            File file = new File("screenshots/");
             file.mkdirs();
             file = new File(String.format("output/seed-%s-sites-%d-lloyds-%d.png", SEED, SITES_AMOUNT, LLOYD_RELAXATIONS));
             while (file.exists()) file = new File(incrementFileName(file.getPath()));
